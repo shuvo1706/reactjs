@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
-import styles from "./App.module.css";
+import styles from "./App.css";
 import Person from "./person";
 import Radium from "radium";
 
@@ -61,7 +61,8 @@ class App extends Component {
 
   render() {
     let persons = 0;
-    const style = {
+    let btnClass = "";
+    /*  const style = {
       border: "1px solid #eee",
       margin: "auto",
       background: "brown",
@@ -70,34 +71,37 @@ class App extends Component {
         backgroundcolor: "lightgreen",
         text: "black",
       },
-    };
+    };*/
     return (
-      <div>
+      <div className={styles.App}>
         <button
-          className={styles.txt}
+          className={btnClass}
           key={Math.random()}
           onClick={this.Switchname}
         >
           switch
         </button>
 
-        <button onClick={this.Listname} key={Math.random()} style={style}>
+        <button
+          onClick={this.Listname}
+          key={Math.random()}
+          className={btnClass}
+        >
           list
         </button>
-        <button onClick={this.Toggle} key={Math.random()} style={style}>
+        <button onClick={this.Toggle} className={btnClass} key={Math.random()}>
           toggle
         </button>
 
         {this.state.toggle
-          ? ((style.background = "blue"),
-            this.state.persons.map(
+          ? this.state.persons.map(
               <Person
                 name={this.state.persons[this.state.variable].name}
                 age={this.state.persons[this.state.variable].age}
                 click={this.Hover}
                 key={Math.random()}
               ></Person>
-            ))
+            )
           : null}
 
         <div>

@@ -1,3 +1,12 @@
-.txt {
-  background-color: coral;
+.App {
+  text-align: center;
+  background-color: tomato;
+}
+.App button {
+  color: blanchedalmond;
+  background-color: seagreen;
+}
+.App button:hover {
+  color: salmon;
+  background-color: slategray;
 }
