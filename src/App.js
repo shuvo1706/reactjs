@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import styles from "./App.css";
 import Person from "./person";
-import Radium from "radium";
 
 class App extends Component {
   state = {
@@ -48,7 +47,7 @@ class App extends Component {
         variable: 1,
       });
   };
-  Toggle = () => {
+  Toggleclass = () => {
     if (this.state.toggle) {
       this.setState({
         toggle: false,
@@ -89,7 +88,11 @@ class App extends Component {
         >
           list
         </button>
-        <button onClick={this.Toggle} className={btnClass} key={Math.random()}>
+        <button
+          onClick={this.Toggleclass}
+          className={btnClass}
+          key={Math.random()}
+        >
           toggle
         </button>
 
@@ -120,10 +123,9 @@ class App extends Component {
         </div>
       </div>
     );
-    this.style.textcolor = "black";
   }
 
   //<Person name="shuvo chakma">sylhet cadet college</Person>;
 }
 
-export default Radium(App);
+export default App;
