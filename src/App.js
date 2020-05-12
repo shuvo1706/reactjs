@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import styles from "./App.module.css";
 import Person from "./person";
 import Radium from "radium";
 
@@ -73,7 +73,11 @@ class App extends Component {
     };
     return (
       <div>
-        <button style={style} key={Math.random()} onClick={this.Switchname}>
+        <button
+          className={styles.txt}
+          key={Math.random()}
+          onClick={this.Switchname}
+        >
           switch
         </button>
 
